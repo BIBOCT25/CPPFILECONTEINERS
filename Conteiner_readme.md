@@ -2188,4 +2188,3 @@ int main() {
 | 17 | queue | `<queue>` | — | — | front/back | push/pop (FIFO) | Адаптер |
 | 18 | priority_queue | `<queue>` | — | Приоритет | top | push/pop (max/min) | Адаптер |
 | 19 | span (C++20) | `<span>` | — | — | O(1) | Не владеет | Представление |
-
