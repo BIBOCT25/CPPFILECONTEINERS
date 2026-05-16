@@ -727,52 +727,7 @@ int main() {
 }
 ```
 
-Все программы готовы к компиляции и запуску. Каждая демонстрирует конкретное действие с вектором или другим контейнером.
-
-# выведи список контейнеров которые рассмотрены
-Вот список контейнеров, которые были рассмотрены в предоставленных программах:
-
-# Рассмотренные контейнеры
-| № | Контейнер | Заголовочный файл | Описание |
-|---|---|---|---|
-| 1 | std::vector | <vector> | Динамический массив с произвольным доступом. Элементы хранятся в непрерывной области памяти. Быстрое добавление/удаление в конце. |
-| 2 | std::deque | <deque> | Двусторонняя очередь. Быстрое добавление/удаление в начале и в конце. Элементы хранятся блоками. |
-| 3 | std::list | <list> | Двусвязный список. Быстрая вставка/удаление в любом месте. Нет произвольного доступа по индексу. |
-| 4 | Статический массив | — (встроенный) | Обычный 2D массив фиксированного размера тип[rows][cols]. Размер задаётся на этапе компиляции. |
-| 5 | Динамический массив | — (встроенный) | Массив, созданный через new. Размер можно менять только пересозданием и копированием. |
-Степень детализации рассмотрения
-| Контейнер | Создание | Увеличение | Уменьшение | Изменение for | Методы |
-|---|---|---|---|---|---|
-| vector | ✅ 5x5 | ✅ до 6x6, 7x7 | ✅ до 6x6, 5x5, 4x4 | ✅ | ✅ (size, capacity, max_size, empty, front, back, at, data, reserve, resize, clear, shrink_to_fit, push_back, pop_back) |
-| deque | ✅ 5x5 | ✅ до 6x6 | ✅ до 4x4 | ✅ (x10) | ✅ (push_back, pop_back) |
-| list | ✅ 5x5 | ✅ до 6x6 | ✅ до 4x4 | ✅ (x10) | ✅ (push_back, pop_back, итераторы) |
-| Статический массив | ✅ 5x5 | ❌ невозможно | ❌ невозможно | ✅ (x10) | ❌ |
-| Динамический массив | ✅ 5x5 | ✅ до 6x6 (ручное) | ❌ не показано | ✅ (x10) | ❌ (только new/delete) |
-# Контейнеры, которые НЕ были рассмотрены
-Из стандартной библиотеки C++ остались незатронутыми:
-
-| Контейнер | Заголовочный файл | Тип |
-|---|---|---|
-| std::array | <array> | Статический массив-обёртка (фиксированный размер) |
-| std::forward_list | <forward_list> | Односвязный список |
-| std::set | <set> | Множество (уникальные отсортированные элементы) |
-| std::multiset | <set> | Мультимножество (допускает дубликаты) |
-| std::map | <map> | Ассоциативный массив (словарь) |
-| std::multimap | <map> | Мультисловарь (допускает дубликаты ключей) |
-| std::unordered_set | <unordered_set> | Хеш-множество |
-| std::unordered_multiset | <unordered_set> | Хеш-мультимножество |
-| std::unordered_map | <unordered_map> | Хеш-таблица (словарь) |
-| std::unordered_multimap | <unordered_map> | Хеш-мультисловарь |
-| std::stack | <stack> | Адаптер контейнера (стек LIFO) |
-| std::queue | <queue> | Адаптер контейнера (очередь FIFO) |
-| std::priority_queue | <queue> | Адаптер контейнера (очередь с приоритетом) |
-| std::span | <span> (C++20) | Представление непрерывной последовательности |
-Итого: из 16+ стандартных контейнеров/адаптеров рассмотрено 5 (vector, deque, list, статический массив, динамический массив). Основной акцент сделан на std::vector как на самом универсальном и часто используемом контейнере.
-
-жду по  остальным
-Вот программы для всех оставшихся контейнеров. Каждая программа отдельная и самодостаточная.
-
-### 1. std::array
+### 13. std::array
 ```cpp
 #include <iostream>
 #include <array>
@@ -868,7 +823,7 @@ int main() {
 }
 ```
 
-### 2. std::forward_list
+### 14. std::forward_list
 ```cpp
 #include <iostream>
 #include <forward_list>
@@ -1018,7 +973,7 @@ int main() {
 }
 ```
 
-### 3. std::set
+### 15. std::set
 ```cpp
 #include <iostream>
 #include <set>
@@ -1133,7 +1088,7 @@ int main() {
 }
 ```
 
-### 4. std::multiset
+### 16. std::multiset
 ```cpp
 #include <iostream>
 #include <set>
@@ -1235,7 +1190,7 @@ int main() {
 }
 ```
 
-### 5. std::map
+### 17. std::map
 ```cpp
 #include <iostream>
 #include <map>
@@ -1349,7 +1304,7 @@ int main() {
 }
 ```
 
-### 6. std::multimap
+### 18. std::multimap
 ```cpp
 #include <iostream>
 #include <map>
@@ -1456,7 +1411,7 @@ int main() {
 }
 ```
 
-### 7. std::unordered_set
+### 19. std::unordered_set
 ```cpp
 #include <iostream>
 #include <unordered_set>
@@ -1559,7 +1514,7 @@ int main() {
 }
 ```
 
-### 8. std::unordered_multiset
+### 20. std::unordered_multiset
 ```cpp
 #include <iostream>
 #include <unordered_set>
@@ -1635,7 +1590,7 @@ int main() {
 }
 ```
 
-### 9. std::unordered_map
+### 21. std::unordered_map
 ```cpp
 #include <iostream>
 #include <unordered_map>
@@ -1748,7 +1703,7 @@ int main() {
 }
 ```
 
-### 10. std::unordered_multimap
+### 22. std::unordered_multimap
 ```cpp
 #include <iostream>
 #include <unordered_map>
@@ -1823,7 +1778,7 @@ int main() {
 }
 ```
 
-### 11. std::stack
+### 23. std::stack
 ```cpp
 #include <iostream>
 #include <stack>
@@ -1899,7 +1854,7 @@ int main() {
 }
 ```
 
-### 12. std::queue
+### 24. std::queue
 ```cpp
 #include <iostream>
 #include <queue>
@@ -1969,7 +1924,7 @@ int main() {
 }
 ```
 
-### 13. std::priority_queue
+### 25. std::priority_queue
 ```cpp
 #include <iostream>
 #include <queue>
@@ -2086,7 +2041,7 @@ int main() {
 }
 ```
 
-### 14. std::span (C++20)
+### 26. std::span (C++20)
 ```cpp
 #include <iostream>
 #include <span>
@@ -2212,25 +2167,25 @@ int main() {
 ```
 
 ## СВОДНАЯ ТАБЛИЦА ВСЕХ РАССМОТРЕННЫХ КОНТЕЙНЕРОВ
-| № прим. | Контейнер | Заголовок | Уникальность | Сортировка | Доступ | Вставка/удаление | Память |
+| № | Контейнер | Заголовок | Уникальность | Сортировка | Доступ | Вставка/удаление | Память |
 |---|---|---|---|---|---|---|---|
-| 1-7, 12 | vector | `<vector>` | Нет | Нет | O(1) | O(n) в середине, O(1) в конце | Непрерывная |
-| 8 | deque | `<deque>` | Нет | Нет | O(1) | O(n) в середине, O(1) в начале/конце | Блочная |
-| 9 | list | `<list>` | Нет | Нет | O(n) | O(1) везде | Узлы |
-| 10 | Статический массив | — | Нет | Нет | O(1) | Нельзя | Непрерывная |
-| 11 | Динамический массив | — | Нет | Нет | O(1) | O(n) (копирование) | Непрерывная |
-| 13 | array | `<array>` | Нет | Нет | O(1) | Нельзя | Непрерывная |
-| 14 | forward_list | `<forward_list>` | Нет | Нет | O(n) | O(1) после итератора | Узлы |
-| 15 | set | `<set>` | Да | Да | O(log n) | O(log n) | Дерево |
-| 16 | multiset | `<set>` | Нет | Да | O(log n) | O(log n) | Дерево |
-| 17 | map | `<map>` | Ключи | Ключи | O(log n) | O(log n) | Дерево |
-| 18 | multimap | `<map>` | Нет | Ключи | O(log n) | O(log n) | Дерево |
-| 19 | unordered_set | `<unordered_set>` | Да | Нет | O(1) ср. | O(1) ср. | Хеш-таблица |
-| 20 | unordered_multiset | `<unordered_set>` | Нет | Нет | O(1) ср. | O(1) ср. | Хеш-таблица |
-| 21 | unordered_map | `<unordered_map>` | Ключи | Нет | O(1) ср. | O(1) ср. | Хеш-таблица |
-| 22 | unordered_multimap | `<unordered_map>` | Нет | Нет | O(1) ср. | O(1) ср. | Хеш-таблица |
-| 23 | stack | `<stack>` | — | — | top | push/pop (LIFO) | Адаптер |
-| 24 | queue | `<queue>` | — | — | front/back | push/pop (FIFO) | Адаптер |
-| 25 | priority_queue | `<queue>` | — | Приоритет | top | push/pop (max/min) | Адаптер |
-| 26 | span (C++20) | `<span>` | — | — | O(1) | Не владеет | Представление |
+| 1 | vector | `<vector>` | Нет | Нет | O(1) | O(n) в середине, O(1) в конце | Непрерывная |
+| 2 | deque | `<deque>` | Нет | Нет | O(1) | O(n) в середине, O(1) в начале/конце | Блочная |
+| 3 | list | `<list>` | Нет | Нет | O(n) | O(1) везде | Узлы |
+| 4 | Статический массив | — | Нет | Нет | O(1) | Нельзя | Непрерывная |
+| 5 | Динамический массив | — | Нет | Нет | O(1) | O(n) (копирование) | Непрерывная |
+| 6 | array | `<array>` | Нет | Нет | O(1) | Нельзя | Непрерывная |
+| 7 | forward_list | `<forward_list>` | Нет | Нет | O(n) | O(1) после итератора | Узлы |
+| 8 | set | `<set>` | Да | Да | O(log n) | O(log n) | Дерево |
+| 9 | multiset | `<set>` | Нет | Да | O(log n) | O(log n) | Дерево |
+| 10 | map | `<map>` | Ключи | Ключи | O(log n) | O(log n) | Дерево |
+| 11 | multimap | `<map>` | Нет | Ключи | O(log n) | O(log n) | Дерево |
+| 12 | unordered_set | `<unordered_set>` | Да | Нет | O(1) ср. | O(1) ср. | Хеш-таблица |
+| 13 | unordered_multiset | `<unordered_set>` | Нет | Нет | O(1) ср. | O(1) ср. | Хеш-таблица |
+| 14 | unordered_map | `<unordered_map>` | Ключи | Нет | O(1) ср. | O(1) ср. | Хеш-таблица |
+| 15 | unordered_multimap | `<unordered_map>` | Нет | Нет | O(1) ср. | O(1) ср. | Хеш-таблица |
+| 16 | stack | `<stack>` | — | — | top | push/pop (LIFO) | Адаптер |
+| 17 | queue | `<queue>` | — | — | front/back | push/pop (FIFO) | Адаптер |
+| 18 | priority_queue | `<queue>` | — | Приоритет | top | push/pop (max/min) | Адаптер |
+| 19 | span (C++20) | `<span>` | — | — | O(1) | Не владеет | Представление |
 
